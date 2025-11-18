@@ -14,12 +14,21 @@
     "LICENSE": true,
     // ".vscode/": true,
     "**/__pycache__": true,
-    ".gitignore": true,
+    ".gitignore": false,
     ".mypy_cache": true,
     "coverage.xml": true,
     ".pytest_cache": true
   },
   "editor.mouseWheelZoom": true,
+  "sqltools.useNodeRuntime": true,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "beerlog",
+      "database": "./beerlog.db"
+    }
+  ]
   // "python.linting.pylintEnabled": false,
   // "python.linting.flake8Enabled": true,
   // "python.linting.enabled": true
