@@ -1,5 +1,6 @@
 import typer
-from beerlog.core import add_beer_to_database
+from typing import Optional
+from beerlog.core import add_beer_to_database, get_beers_from_database
 
 main = typer.Typer(help="Beer Management System")
 
@@ -18,6 +19,8 @@ def add(
         print("🚫 failed to add beer")
 
 @main.command("list")
-def list_beers(style: str):
+def list_beers(style: Optional[str] = None):
     """Lists beers in database"""
-    print(style)
+    beers = get_beers_from_database()
+    print(beers)
+    
