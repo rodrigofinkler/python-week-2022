@@ -137,3 +137,9 @@ In [5]: with Session(engine) as session:
    ...:     for beer in results:
    ...:         print(beer.name)
 ```
+
+Como rodar a API localmente:
+
+```sh
+uvicorn beerlog.api:api --reload
+```
