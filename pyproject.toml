@@ -19,6 +19,7 @@ uvicorn = "^0.38.0"
 [tool.poetry.group.dev.dependencies]
 ipython = "^8.2.0"
 isort = "^7.0.0"
+pytest = "^9.0.1"
 
 [tool.poetry.scripts]
 beerlog = "beerlog.__main__:main"
