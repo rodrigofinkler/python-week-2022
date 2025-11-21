@@ -143,3 +143,15 @@ Como rodar a API localmente:
 ```sh
 uvicorn beerlog.api:api --reload
 ```
+
+Para rodar os testes em um banco isolado:
+
+```
+export BEERLOG_DATABASE__url="sqlite:///testing.db"
+```
+
+Para voltar a usar o banco usual:
+
+```
+unset BEERLOG_DATABASE__url
+```
