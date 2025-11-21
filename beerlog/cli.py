@@ -8,19 +8,21 @@ main = typer.Typer(help="Beer Management System")
 
 console = Console()
 
+
 @main.command("add")
 def add(
     name: str,
     style: str,
     flavor: int = typer.Option(...),
     image: int = typer.Option(...),
-    cost: int = typer.Option(...)
+    cost: int = typer.Option(...),
 ):
     """Adds a new beer to database"""
-    if (add_beer_to_database(name, style, flavor, image, cost)):
+    if add_beer_to_database(name, style, flavor, image, cost):
         print("🍺 beer added to database")
     else:
         print("🚫 failed to add beer")
+
 
 @main.command("list")
 def list_beers(style: Optional[str] = None):
@@ -29,10 +31,9 @@ def list_beers(style: Optional[str] = None):
     table = Table(title="Beerlog :beer_mug:")
     headers = ["id", "name", "style", "rating", "date"]
     for header in headers:
-        table.add_column(header, style='magenta')
+        table.add_column(header, style="magenta")
     for beer in beers:
         beer.date = beer.date.strftime("%Y-%m-%d")
         values = [str(getattr(beer, header)) for header in headers]
         table.add_row(*values)
     console.print(table)
-    
