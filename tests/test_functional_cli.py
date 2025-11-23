@@ -6,6 +6,8 @@ runner = CliRunner()
 
 
 def test_add_beer():
-    result = runner.invoke(main, ["add", "Skol", "Pilsen", "--flavor=1", "--image=1", "--cost=3"])
+    result = runner.invoke(
+        main, ["add", "Skol", "Pilsen", "--flavor=1", "--image=1", "--cost=3"]
+    )
     assert result.exit_code == 0
     assert "beer added" in result.stdout
