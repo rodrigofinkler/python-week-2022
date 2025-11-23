@@ -20,6 +20,7 @@ uvicorn = "^0.38.0"
 ipython = "^8.2.0"
 isort = "^7.0.0"
 pytest = "^9.0.1"
+requests = "^2.32.5"
 
 [tool.poetry.scripts]
 beerlog = "beerlog.__main__:main"
