@@ -11,8 +11,9 @@ api = FastAPI(title="Beerlog")
 
 
 @api.get("/")
-async def root():    
+async def root():
     return "🍺😎"
+
 
 @api.get("/beers/", response_model=List[BeerOut])
 async def list_beers():
